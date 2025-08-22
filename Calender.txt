@@ -1,0 +1,124 @@
+🔍 Step-by-Step Explanation
+🔹 1. Global Variables and Structs
+
+int width = 80, year;
+int cols, lead, gap;
+
+    width: how wide the terminal output should be.
+
+    year: the year the user inputs.
+
+    cols: how many months per row (e.g., 3, 4, or 6).
+
+    lead: left padding before printing a row of months.
+
+    gap: space between months.
+
+const char *wdays[] = { "Su", "Mo", "Tu", "We", "Th", "Fr", "Sa" };
+
+    Array of weekday names.
+
+struct months {
+	const char *name;
+	int days, start_wday, at;
+} months[12] = {
+  ...
+};
+
+    name: month name.
+
+    days: number of days in the month.
+
+    start_wday: which day of the week the 1st of the month starts on (0 = Sunday).
+
+    at: internal counter used while printing dates.
+
+🔹 2. Function: space(int n)
+
+void space(int n) { while (n-- > 0) putchar(' '); }
+
+    Prints n spaces. Used to align text.
+
+🔹 3. Function: init_months()
+
+This sets up the months based on the input year:
+
+if ((!(year % 4) && (year % 100)) || !(year % 400))
+    months[1].days = 29;
+
+    Adjusts February to 29 if it’s a leap year.
+
+months[0].start_wday = (year * 365 + year/4 - year/100 + year/400 + 1) % 7;
+
+    Zeller's Congruence-like logic to calculate the weekday of Jan 1st.
+
+for (i = 1; i < 12; i++)
+    months[i].start_wday = (months[i-1].start_wday + months[i-1].days) % 7;
+
+    Sets the weekday the month starts on using previous month's values.
+
+cols = (width + 2) / 22;
+while (12 % cols) cols--;
+
+    Determines how many months can fit in one row (cols).
+
+    It also ensures 12 months divide evenly into the number of columns.
+
+gap = cols - 1 ? (width - 20 * cols) / (cols - 1) : 0;
+
+    Calculates space between months.
+
+lead = (width - (20 + gap) * cols + gap + 1) / 2;
+
+    Calculates how much to indent (left space) the calendar.
+
+🔹 4. Function: print_row(int row)
+
+Prints one row (e.g., 3 or 4 months depending on cols).
+✅ Step-by-step inside print_row:
+
+    Print month names centered in 20-character fields.
+
+    Print weekday headers: Su Mo Tu We Th Fr Sa.
+
+    Print dates:
+
+        Starts from start_wday.
+
+        Uses months[c].at to track what date was printed last.
+
+        Loops through weeks and prints 7 days at a time.
+
+        Stops when all days of all months in that row are printed.
+
+🔹 5. Function: print_year()
+
+sprintf(buf, "%d", year);
+space((width - strlen(buf)) / 2);
+printf("%s\n\n", buf);
+
+    Centers and prints the year number.
+
+for (row = 0; row * cols < 12; row++)
+    print_row(row);
+
+    Loops through rows of months and prints them.
+
+🔹 6. Function: main()
+
+printf("Input a valid year: ");
+scanf("%d", &year);
+
+    Asks the user for a year.
+
+Then:
+
+    Accepts optional command-line arguments:
+
+        -w [width]: terminal width.
+
+        [year]: if passed, overrides the prompt input.
+
+If inputs are valid:
+
+    Calls init_months() and then print_year().
