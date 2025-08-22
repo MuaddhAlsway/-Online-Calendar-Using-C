@@ -50,7 +50,10 @@ Create functions to:
 
 - 📌 Schedule meetings in advance
 
-  
-### 👤 Made by me
+##  👨‍🏫 Instructor / Tutorial Credit
 
-## 📰 Online Calendar Using C
+**Instructor / Tutorial:** [Codegnan – C Programming Projects](https://codegnan.com/c-programming-projects/)
+
+### 👤 building by me
+
+## 📰 Online Calendar Using C Post
