@@ -1,9 +1,10 @@
 # 📅 Online Calendar Using C
-## 🟢 Difficulty Level: Easy
+
+### 🟢 Difficulty Level: Easy
 
 Build a simple calendar program in C that displays days, months, and years. You can enhance it with features like reminders and meeting schedules.
 
-## 🎯 Learning Outcomes
+### 🎯 Learning Outcomes
 
 By creating this project, you’ll learn:
 
@@ -15,20 +16,20 @@ By creating this project, you’ll learn:
 
 - ❓ Implement conditional statements (if statements)
 
-## 🎞️  Project Live:
+### 🎞️  Project Live:
 
 
 https://github.com/user-attachments/assets/e6d907d3-bb90-469e-b821-bba766baa848
 
 
-## 🛠 Setup & Coding Steps
-### 💻 Setup
+### 🛠 Setup & Coding Steps
+#### 💻 Setup
 ```
 Install a C compiler like GCC
 
 Choose a text editor or IDE: Visual Studio Code, Code::Blocks, etc.
 ```
-###  ✍️ Coding
+### ✍️ Coding
 
 Define arrays for month names and days in each month
 
@@ -42,13 +43,13 @@ Create functions to:
 
    - Use loops to iterate through days and weeks, conditionally displaying dates
 
-## 🧪 Testing
+### 🧪 Testing
 
  - Compile and run your program with different months and years
 
 - Refine your code to handle edge cases and improve readability
 
-## 💡 Real-World Applications
+### 💡 Real-World Applications
 
 - 📆 Track days and weeks digitally
 
@@ -56,10 +57,13 @@ Create functions to:
 
 - 📌 Schedule meetings in advance
 
-##  👨‍🏫 Instructor / Tutorial Credit
+### 👨‍🏫 Instructor / Tutorial Credit
 
 **Instructor / Tutorial:** [Codegnan – C Programming Projects](https://codegnan.com/c-programming-projects/)
 
 ### 👤 building by me
 
-## 📰 Online Calendar Using C Post
+### 📰 Online Calendar Using C Post
+  <a href="https://www.linkedin.com/posts/muaddh-alsway_cprogramming-softwareengineering-learningbydoing-activity-7365871724539670528-YTjP?utm_source=share&utm_medium=member_desktop&rcm=ACoAADejAqQBo4IKkDbZQ2uIFfqpjS0OHOJntq8" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="linkedin logo"  />
+  </a>
